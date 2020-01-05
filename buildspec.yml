@@ -15,7 +15,6 @@ phases:
   pre_build:
     commands:
       - echo Entered the pre_build phase...
-      - docker login –u User –p $LOGIN_PASSWORD
     finally:
       - echo This always runs even if the login command fails 
   build:
@@ -23,6 +22,10 @@ phases:
       - echo Entered the build phase...
       - echo Build started on `date`
       - mvn install
+      - mvn compile
+      - mvn pmd:pmd
+      - mvn test
+      - mvn package
     finally:
       - echo This always runs even if the install command fails
   post_build:
