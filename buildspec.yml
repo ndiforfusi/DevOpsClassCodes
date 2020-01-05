@@ -31,7 +31,7 @@ phases:
       - echo Build completed on `date`
 
 reports:
-  arn:aws:codebuild:us-east-2:327019199684:githubproject/report:
+  arn:aws:codebuild:us-east-2:327019199684:build/Git:5559cfcb-a0de-4870-bd3e-4f7facf481c8
     files:
       - "**/*"
     base-directory: 'target/tests/reports'
